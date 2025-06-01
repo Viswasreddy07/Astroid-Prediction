@@ -1,0 +1,89 @@
+/* Custom theme for Asteroid Threat Analysis System */
+
+/* Background stars animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: stars 120s linear infinite;
+    z-index: -1;
+}
+
+@keyframes stars {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Custom metric animations */
+div[data-testid="stMetricValue"] {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Custom button styles */
+.stButton > button {
+    width: 100%;
+    margin-top: 1rem;
+    background: linear-gradient(45deg, #FF4B4B, #FF6B6B);
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 75, 75, 0.4);
+}
+
+/* Form styling */
+div[data-testid="stForm"] {
+    background: rgba(30, 30, 30, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Metric card styling */
+div[data-testid="stMetricValue"] {
+    background: rgba(38, 39, 48, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Chart container styling */
+div[data-testid="stPlotlyChart"] {
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Sidebar styling */
+section[data-testid="stSidebar"] {
+    background-color: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(10px);
+} 
